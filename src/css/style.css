@@ -1,0 +1,776 @@
+* {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+
+}
+
+:root {
+    --black: #191C1F;
+    --dark-grey: #5E646A;
+    --grey: #83898F;
+    --mid-grey: #C2C8CD;
+    --light-grey: #ECEFF2;
+    --extralight-grey: #F6F8FA;
+    --white: #FFFFFF;
+    --dangerous: #F13636;
+    --green-success: #25CD82;
+
+    --primary-disabled: #ABCAE6;
+    --primary: #2A6CEA;
+    --primary-hover: #397DFF;   
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-MediumItalic.eot');
+    src: local('Graphik LCG Medium Italic'), local('GraphikLCG-MediumItalic'),
+        url('../fonts/GraphikLCG-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-MediumItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-MediumItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-SuperItalic.eot');
+    src: local('Graphik LCG Super Italic'), local('GraphikLCG-SuperItalic'),
+        url('../fonts/GraphikLCG-SuperItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-SuperItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-SuperItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-SuperItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-SemiboldItalic.eot');
+    src: local('Graphik LCG Semibold Italic'), local('GraphikLCG-SemiboldItalic'),
+        url('../fonts/GraphikLCG-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-SemiboldItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-SemiboldItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Black.eot');
+    src: local('Graphik LCG Black'), local('GraphikLCG-Black'),
+        url('../fonts/GraphikLCG-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Black.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Black.woff') format('woff'),
+        url('../fonts/GraphikLCG-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Super.eot');
+    src: local('Graphik LCG Super'), local('GraphikLCG-Super'),
+        url('../fonts/GraphikLCG-Super.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Super.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Super.woff') format('woff'),
+        url('../fonts/GraphikLCG-Super.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Thin.eot');
+    src: local('Graphik LCG Thin'), local('GraphikLCG-Thin'),
+        url('../fonts/GraphikLCG-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Thin.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Thin.woff') format('woff'),
+        url('../fonts/GraphikLCG-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-ExtralightItalic.eot');
+    src: local('Graphik LCG Extralight Italic'), local('GraphikLCG-ExtralightItalic'),
+        url('../fonts/GraphikLCG-ExtralightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-ExtralightItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-ExtralightItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-ExtralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Regular.eot');
+    src: local('Graphik LCG Regular'), local('GraphikLCG-Regular'),
+        url('../fonts/GraphikLCG-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Regular.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Regular.woff') format('woff'),
+        url('../fonts/GraphikLCG-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-BoldItalic.eot');
+    src: local('Graphik LCG Bold Italic'), local('GraphikLCG-BoldItalic'),
+        url('../fonts/GraphikLCG-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-BoldItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-BoldItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-LightItalic.eot');
+    src: local('Graphik LCG Light Italic'), local('GraphikLCG-LightItalic'),
+        url('../fonts/GraphikLCG-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-LightItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-LightItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-BlackItalic.eot');
+    src: local('Graphik LCG Black Italic'), local('GraphikLCG-BlackItalic'),
+        url('../fonts/GraphikLCG-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-BlackItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-BlackItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Medium.eot');
+    src: local('Graphik LCG Medium'), local('GraphikLCG-Medium'),
+        url('../fonts/GraphikLCG-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Medium.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Medium.woff') format('woff'),
+        url('../fonts/GraphikLCG-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Light.eot');
+    src: local('Graphik LCG Light'), local('GraphikLCG-Light'),
+        url('../fonts/GraphikLCG-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Light.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Light.woff') format('woff'),
+        url('../fonts/GraphikLCG-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Semibold.eot');
+    src: local('Graphik LCG Semibold'), local('GraphikLCG-Semibold'),
+        url('../fonts/GraphikLCG-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Semibold.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Semibold.woff') format('woff'),
+        url('../fonts/GraphikLCG-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Bold.eot');
+    src: local('Graphik LCG Bold'), local('GraphikLCG-Bold'),
+        url('../fonts/GraphikLCG-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Bold.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Bold.woff') format('woff'),
+        url('../fonts/GraphikLCG-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-Extralight.eot');
+    src: local('Graphik LCG Extralight'), local('GraphikLCG-Extralight'),
+        url('../fonts/GraphikLCG-Extralight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-Extralight.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-Extralight.woff') format('woff'),
+        url('../fonts/GraphikLCG-Extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-ThinItalic.eot');
+    src: local('Graphik LCG Thin Italic'), local('GraphikLCG-ThinItalic'),
+        url('../fonts/GraphikLCG-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-ThinItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-ThinItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Graphik LCG';
+    src: url('../fonts/GraphikLCG-RegularItalic.eot');
+    src: local('Graphik LCG Regular Italic'), local('GraphikLCG-RegularItalic'),
+        url('../fonts/GraphikLCG-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GraphikLCG-RegularItalic.woff2') format('woff2'),
+        url('../fonts/GraphikLCG-RegularItalic.woff') format('woff'),
+        url('../fonts/GraphikLCG-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--black);
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 64px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 56px;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+caption {
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+p, a {
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: normal;
+    color: var(--black);
+}
+
+p.body-18 {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+p.body-16 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+p.body-14 {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+p.body-12 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.black {
+    color: var(--black);
+}
+
+.dangerous {
+    color: var(--dangerous);
+}
+
+.dark-grey {
+    color: var(--dark-grey);
+}
+
+.mid-grey {
+    color: var(--mid-grey);
+}
+
+.light-grey {
+    color: var(--light-grey);
+}
+
+.grey {
+    color: var(--grey);
+}
+
+.extralight-grey {
+    color: var(--extralight-grey);
+}
+
+.green-success {
+    color: var(--green-success);
+}
+
+.white {
+    color: var(--white);
+}
+
+.primary {
+    color: var(--primary);
+}
+
+.primary-disabled {
+    color: var(--primary-disabled);
+}
+
+.primary-hover {
+    color: var(--primary-hover);
+}
+
+.background-extralight-grey {
+    background: var(--extralight-grey);
+}
+
+.container {
+    width: 1210px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+}
+
+.header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.header-logo {
+    margin: auto 0;
+    float: right;
+}
+
+.header-menu {
+    float: left;
+    margin: auto 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    margin: 0px 24px;
+    display: inherit;
+}
+
+.menu li a {
+    color: var(--white);
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    height: 960px;
+}
+
+.hero::before {
+    background-image: url('../img/Lunch_atop_a_Skyscraper\ 1.png');
+    background-repeat: no-repeat;
+    z-index: -888;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(42, 109, 234, 0.8);
+    transition: all .3s ease;
+    z-index: -888;
+    height: 960px;
+}
+
+.hero-header {
+    width: 748px;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-description {
+    padding: 18px 0 92px;
+}
+
+button {
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin: 0px 10px;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-light-grey {
+    background: var(--light-grey);
+    border: 1px solid var(--light-grey);
+}
+
+.button-light-grey:hover {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    box-sizing: border-box;
+}
+
+.button-primary {
+    background: var(--primary);
+    border: none;
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background: var(--primary-hover);
+    border: none;
+    color: var(--white);
+}
+
+.submit-button {
+    margin: 0;
+}
+
+.icons {
+    padding: 0 0 80px;
+}
+
+.icons-group {
+    padding-top: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-group {
+    width: 280px;
+    padding-bottom: 80px;
+}
+
+.icon {
+    padding-bottom: 20px;
+}
+
+.icon-heading {
+    padding-bottom: 4px;
+}
+
+.third-block {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.third-block * {
+    width: 592px;
+}
+
+.third-block-description * {
+    padding-bottom: 18px;
+}
+
+.third-block-img {
+    background-image: url('../img/2_2.png');
+}
+
+.testimonials .container {
+    padding: 57px 0 45px;
+}
+
+.testimonials h2 {
+    padding-bottom: 32px;
+}
+
+.faq .container {
+    padding: 80px 0;
+}
+
+.faq h2 {
+    padding-bottom: 40px;
+}
+
+.faq-group {
+    width: 1008px;
+    margin: 0 auto;
+}
+
+.single-faq::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--extralight-grey);
+}
+
+.question, .answer {
+    width: 936px;
+    margin-right: 48px;
+}
+
+.question {
+    padding: 24px 0 24px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.question::after {
+    content: '';
+    background-image: url('../img/plus.png');
+    left: 984px;
+    top: -28px;
+    position: relative;
+    right: -48px;
+    bottom: 0;
+    height: 24px;
+    width: 24px;
+    display: block;
+}
+
+.question:hover::after {
+    content: '';
+    background-image: url('../img/plus-primary.png');
+    left: 984px;
+    top: -28px;
+    position: relative;
+    right: -48px;
+    bottom: 0;
+    height: 24px;
+    width: 24px;
+    display: block;
+}
+
+.question.answered::after, .question.answered:hover::after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.question:hover, .question:hover > p {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.answer {
+    padding-bottom: 24px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.flex-columns {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 67px 0 30px;
+}
+
+.flex-column {
+    flex-basis: 50%;
+    padding-bottom: 37px;
+}
+
+.flex-column p {
+    padding-right: 32px;
+}
+
+.flex-column.bold {
+    padding-bottom: 17px;
+}
+
+.form .container {
+    padding: 80px 0 50px;
+}
+
+.form h2 {
+    padding-bottom: 44px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    column-gap: 32px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1 0 384px;
+    max-width: 420px;
+    margin-bottom: 30px;
+    max-height: 64px;
+}
+
+.form-item {
+    width: 100%;
+}
+
+label {
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--dark-grey);
+}
+
+.form-group>label.label-input{
+    position: relative;
+    top: -48px;
+    left: 18px;
+}
+
+input:focus + label.label-input {
+    position: relative;
+    top: -58px;
+    left: 19px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--grey);
+}
+
+input {
+    background: var(--extralight-grey);
+    border: 2px solid var(--extralight-grey);
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 384px;
+    height: 64px;
+    padding: 16px;
+    font-family: Graphik LCG;
+    font-size: 18px;
+    color: var(--black);
+}
+
+input:focus {
+    padding: 28px 16px 4px;
+    background: var(--white);
+    border: 2px solid var(--mid-grey);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+::placeholder {
+    font-family: Graphik LCG;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0;
+    line-height: 0;
+    color: var(--dark-grey);
+}
+
+:focus::placeholder, :focus::-webkit-input-placeholder, :focus::-moz-placeholder {
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--mid-grey);
+}
+
+input#checkbox-input {
+    width: 24px;
+    height: 24px;
+    background: var(--white);
+    border: 2px solid var(--mid-grey);
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+label.label-checkbox {
+    position: relative;
+    top: -4px;
+}
+
+.footer {
+    height: 87px;
+}
+
+.footer::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: var(--extralight-grey);
+} 
+
+.copyright {
+    padding: 28px 0;
+}
