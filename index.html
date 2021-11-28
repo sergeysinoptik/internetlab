@@ -17,10 +17,10 @@
             </div>
             <div class="header-menu">
                 <ul class="menu body-16 white">
-                    <li><a href="#">Как это работает</a></li>
-                    <li><a href="#">3-й блок</a></li>
-                    <li><a href="#">Вопросы и ответы</a></li>
-                    <li><a href="#">Форма</a></li>
+                    <li><a href="#icons">Как это работает</a></li>
+                    <li><a href="#third-block">3-й блок</a></li>
+                    <li><a href="#faq">Вопросы и ответы</a></li>
+                    <li><a href="#form">Форма</a></li>
                 </ul>
             </div>
         </div>
@@ -36,6 +36,7 @@
             </div>
         </section>
         <section class="icons">
+            <div id="icons"></div>
             <div class="container">
                 <h2 class="text-align-center">Как это работает</h2>
                 <div class="icons-group">
@@ -60,6 +61,7 @@
                         <p class="body-14">Ну тут все просто, не я придумал правила, но думаю так и будет)))</p>
                     </div>
                 </div>
+                <div id="third-block"></div>
                 <div class="third-block">
                     <div class="third-block-description">
                         <h3>Круто, ты дошел до третьего блока</h3>
@@ -152,6 +154,7 @@
             </div>
         </section>
         <section class="faq">
+            <div id="faq"></div>
             <div class="container">
                 <h2 class="text-align-center">Вопросы и ответы</h2>
                 <div class="faq-group">
@@ -237,16 +240,17 @@
             </div>
         </section>
         <section class="form">
+            <div id="form"></div>
             <div class="container">
                 <h2 class="text-align-center">Отправь форму</h2>
                 <form>
                     <div class="form-group">
                         <input type="text" class="form-item" name="text" id="text-input" placeholder="Имя">
-                        <label class="label-input" for="text-input">Имя</label>
+                        <label class="label-input" for="text-input" id="text-input-label">Имя</label>
                     </div>
                     <div class="form-group">
                         <input type="tel" class="form-item" name="phone" id="phone-input" placeholder="Телефон">
-                        <label class="label-input" for="phone-input">Телефон</label>
+                        <label class="label-input" for="phone-input" id="phone-input-label">Телефон</label>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="checkbox" id="checkbox-input" value="agree" >

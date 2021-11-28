@@ -11,6 +11,10 @@ body {
 
 }
 
+dl, ol, ul {
+    margin: 0;
+}
+
 :root {
     --black: #191C1F;
     --dark-grey: #5E646A;
@@ -518,6 +522,12 @@ button {
 
 .submit-button {
     margin: 0;
+    padding: 20px 0;
+}
+
+#icons {
+    position: relative;
+    top: -80px;
 }
 
 .icons {
@@ -525,7 +535,7 @@ button {
 }
 
 .icons-group {
-    padding: 65px 0 80px;
+    padding: 65px 0 0;
     display: flex;
     justify-content: space-between;
     column-gap: 32px;
@@ -542,6 +552,11 @@ button {
 
 .icon-heading {
     padding-bottom: 4px;
+}
+
+#third-block {
+    position: relative;
+    top: -60px;
 }
 
 .third-block {
@@ -719,6 +734,15 @@ input:focus + label.label-input {
     color: var(--grey);
 }
 
+.non-empty {
+    position: relative;
+    top: -58px;
+    left: 19px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--grey);
+}
+
 input {
     background: var(--extralight-grey);
     border: 2px solid var(--extralight-grey);
@@ -730,6 +754,18 @@ input {
     font-family: Graphik LCG;
     font-size: 18px;
     color: var(--black);
+}
+
+input.correct {
+    background-image: url(../img/correct.png);
+    background-repeat: no-repeat;
+    background-position: 380px center;
+}
+
+input.invalid {
+    background-image: url(../img/invalid.png);
+    background-repeat: no-repeat;
+    background-position: 380px center;
 }
 
 input:focus {
@@ -838,13 +874,13 @@ label.label-checkbox {
 .owl-prev {
     position: relative;
     top: -230px;
-    left: -40px;
+    left: -50px;
 }
 
 .owl-next {
     position: relative;
     top: -230px;
-    left: -1120px;
+    right: -1105px;
 }
 
   .gtco-testimonials .owl-dots {
@@ -917,4 +953,37 @@ label.label-checkbox {
   .owl-carousel button.owl-dot {
     outline: 0;
   }
-  
+
+  .owl-prev span, .owl-next span {
+    font-size: 0;
+  }
+
+  .owl-prev span::after {
+    width: 18px;
+    height: 32px;
+    display: inline-block;
+    content: '';
+    background-image: url('../../src/img/arrow.png');
+    background-repeat: no-repeat;
+  }
+
+  .owl-next span::after {
+    width: 18px;
+    height: 32px;
+    display: inline-block;
+    content: '';
+    background-image: url('../../src/img/arrow.png');
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+  }
+
+  .owl-prev:hover span::after {
+    content: '';
+    background-image: url('../../src/img/arrow-hover.png');
+    transform: rotate(180deg);
+  }
+
+  .owl-next:hover span::after {
+    background-image: url('../../src/img/arrow-hover.png');
+    transform: rotate(0deg);
+  }
