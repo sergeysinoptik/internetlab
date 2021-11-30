@@ -345,6 +345,8 @@ p.body-12 {
 }
 header {
     width: 100%;
+    z-index: 2;
+    position: relative;
 }
 .header {
     height: 80px;
@@ -361,8 +363,15 @@ header {
     float: left;
     margin: auto 0;
 }
-.mobile-menu, .burger {
+.burger {
     display: none;
+}
+.mobile-logo {
+    position: relative;
+    top: -80px;
+    left: 0;
+    width: min-content;
+    padding: 27px 0 27px 15px;
 }
 .menu {
     display: flex;
@@ -384,18 +393,119 @@ header {
 .menu li a:hover {
     text-decoration: underline;
 }
+
+.mobile-menu {
+    list-style: none;
+}
+#menu__toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 1;
+    background: url('../img/burger.png') no-repeat center right;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;  width: 100%;
+  height: 2px;  background-color: #616161;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    float: left;
+    top: 0;
+    left: -100%;  
+    width: 100%;
+    height: 100%;  
+    margin: 0;
+    padding: 80px 0;  
+    list-style: none;
+    text-align: center;  
+    background-color: var(--white);
+}
+.menu__box li * {
+    position: relative;
+    top: -80px;
+}
+.menu__box li::after {
+    position: relative;
+    top: -85px;
+    content: '';
+    width: calc(100% - 40px);
+    height: 1px;
+    background: var(--light-grey);
+    display: inline-block;
+}
+.menu__item {
+    display: block;
+    text-align: left;
+    padding: 16px 24px;
+    color: var(--grey); 
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px; 
+    text-decoration: none;
+    background: url('../img/arrow_m.png') no-repeat calc(100% - 19px) center;
+}
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+#menu__toggle:checked ~ .menu__btn {
+    background: url('../img/close.png') no-repeat center right;
+}
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+main {
+    position: relative;
+    z-index: 1;
+}
 .hero {
     height: 960px;
     position: relative;
     top: -80px;
     min-height: 960px;
     box-sizing: border-box;
+    z-index: 3;
 }
 .hero-img {
     position: relative;
     top: 0;
     background: url('../img/Lunch_atop_a_Skyscraper.png');
-    z-index: -888;
+    z-index: -1;
     height: 960px;
     min-height: 960px;
 }
@@ -409,6 +519,7 @@ header {
     top: 0;
     background-color: rgba(42, 109, 234, 0.8);
     transition: 250ms background-color;
+    z-index: -2;
 }
 .hero-img:hover:after {
     background-color: rgba(42, 109, 234, 0.6);
@@ -424,6 +535,7 @@ header {
     margin: 172px auto 0;
     left: 0;
     right: 0;
+    z-index: 3;
 }
 .hero-header {
     width: 748px;
@@ -877,10 +989,18 @@ label.label-checkbox {
     }
     .burger {
         display: block;
+        width: 62px;
+        height: 62px;
+        cursor: pointer;
+        margin: auto 0;
     }
     .container {
         max-width: 720px;
         margin: 0 auto;
+    }
+    .header.container {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
     }
     .hero {
         height: 1024px;
@@ -1005,6 +1125,10 @@ label.label-checkbox {
     }
     .burger {
         display: block;
+        width: 62px;
+        height: 62px;
+        cursor: pointer;
+        margin: auto 0;
     }
     h2 {
         font-size: 24px;
@@ -1017,6 +1141,10 @@ label.label-checkbox {
     .container {
         max-width: 342px;
         margin: 0 auto;
+    }
+    .header.container {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
     }
     .hero {
         height: 596px;
@@ -1176,6 +1304,13 @@ label.label-checkbox {
     .burger {
         display: block;
     }
+    .menu__btn {
+        display: block;
+        width: 62px;
+        height: 62px;
+        cursor: pointer;
+        margin: auto 0;
+    }
     h2 {
         font-size: 24px;
         line-height: 32px;
@@ -1187,6 +1322,10 @@ label.label-checkbox {
     .container {
         max-width: 288px;
         margin: 0 auto;
+    }
+    .header.container {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
     }
     .hero {
         height: 509px;

@@ -84,3 +84,24 @@ function phoneInputed(e) {
 
 textInput.oninput = textInputed;
 phoneInput.oninput = phoneInputed;
+
+let menuItems = document.querySelectorAll('.menu__item');
+let menuBox = document.querySelector('.menu__box');
+
+function mobileMenuClose(e) { 
+    e.addEventListener('click', function () {
+        menuBox.style.visibility = 'hidden';
+        menuBox.style.width = 0;
+        menuBox.style.height = 0;
+        let menuBtn = document.querySelector('.menu__btn');
+        let menuToggle = document.querySelector('#menu__toggle');
+        menuToggle.checked = false;
+        menuBtn.addEventListener('click', function() {
+            menuBox.style.visibility = 'visible';
+            menuBox.style.width = '100%';
+            menuBox.style.height = '100%';
+        });
+    });
+};
+
+Array.from(menuItems).forEach(e => mobileMenuClose(e));
