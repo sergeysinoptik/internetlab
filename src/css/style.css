@@ -497,7 +497,7 @@ main {
     height: 960px;
     position: relative;
     top: -80px;
-    min-height: 960px;
+    max-height: 100wh;
     box-sizing: border-box;
     z-index: 3;
 }
