@@ -504,10 +504,11 @@ main {
 .hero-img {
     position: relative;
     top: 0;
-    background: url('../img/Lunch_atop_a_Skyscraper.png');
+    background: url('../img/Lunch_atop_a_Skyscraper.png') no-repeat;
     z-index: -1;
     height: 960px;
-    min-height: 960px;
+    min-height: 100vh;
+    background-size: cover;
 }
 .hero-img:after {
     content: "";
@@ -539,7 +540,7 @@ main {
 }
 .hero-header {
     width: 748px;
-    margin: 260px auto 0;
+    margin: 10% auto 0;
     text-align: center;
 }
 .hero-description {
